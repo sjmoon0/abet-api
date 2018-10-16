@@ -8,9 +8,9 @@ const app = express();
 const PORT = 3030;
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost/my-course-DB",{
+mongoose.connect("un:pw@mongodb://localhost/my-course-DB",{
     useNewUrlParser: true
-});
+}).catch("Failed to connect to mongoDB");
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
